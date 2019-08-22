@@ -1,0 +1,26 @@
+package dice;
+import java.util.*;
+
+public class dice {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("How many dice would you like?");
+		int size = scan.nextInt();
+		int [] arr = new int [size];
+		int total = 0;
+		System.out.print("Your die numbers are ");
+		for(int i = 0; i<size;i++){
+			arr[i] = (int)(Math.random()*6)+1;
+			total = total + arr[i];
+			System.out.print(arr[i] + ", ");
+		}
+		System.out.println("Your total with "+ total);
+		if(total % 2 == 0){
+			System.out.println("Good job!! Your number is equal and you win");
+		}else{
+			System.out.println("Sorry your total is odd and you lose");
+		}
+	}
+
+}
